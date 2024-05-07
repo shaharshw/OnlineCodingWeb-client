@@ -1,0 +1,30 @@
+.card-container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 20px; 
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+  padding: 20px;
+  background-color: #fff; 
+}
+
+.card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.card h2 {
+  margin: 0; 
+  color: black; 
+  border-bottom: none; 
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit; 
+}
