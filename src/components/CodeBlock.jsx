@@ -11,7 +11,7 @@ import SmileyFace from '../images/smileyFace.jpg';
 import socketIOClient from "socket.io-client";
 import { v4 as uuidv4 } from 'uuid';
 
-const ENDPOINT = 'http://localhost:3001';
+const ENDPOINT = 'https://onlinecodingweb-server.onrender.com';
 
 const generateUniqueClientId = () => uuidv4();
 function generateUniqueToken() {

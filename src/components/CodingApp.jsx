@@ -15,7 +15,7 @@ export default function CodingApp() {
                 <Routes>
                     <Route path='/' element={ <Lobby /> }></Route>
                     <Route path='/lobby' element={ <Lobby /> }></Route>
-                    <Route path='/codeblock/:blockId' element={ <CodeBlock /> }></Route>
+                    <Route path='/codeblock/:' element={ <CodeBlock /> }></Route>
                     <Route path='*' element={ <ErrorComponent /> }></Route>
                 </Routes>
                 <Footer />
