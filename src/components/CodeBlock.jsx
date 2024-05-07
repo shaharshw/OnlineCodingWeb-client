@@ -68,6 +68,7 @@ export default function CodeBlock() {
       socket.current.off('codeUpdate');
       socket.current.off('submit');
       socket.current.off('success');
+      socket.current.disconnect();
     };
   }, []);
 
