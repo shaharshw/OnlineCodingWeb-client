@@ -19,7 +19,7 @@ export default function Lobby() {
         {codeBlocks.map(block => (
           <div key={block.id} className="card">
             <div className="card-body">
-              <Link to={`/codeblock/${block.title}`} state={{ codeBlock: block }} >
+              <Link to={`/codeblock/${block._id}`} state={{ codeBlock: block }} >
                 <h2>{block.title}</h2>
               </Link>
             </div>
