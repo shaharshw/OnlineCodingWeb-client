@@ -18,6 +18,8 @@ function generateUniqueToken() {
   return uuidv4();
 }
 
+
+
 export default function CodeBlock() {
   const location = useLocation();
   const codeBlock = location.state.codeBlock;
@@ -27,6 +29,7 @@ export default function CodeBlock() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const socket = useRef();
+  const isMounted = useRef(true);
  
   useEffect(() => {
     let clientId = generateUniqueClientId(); 
@@ -63,12 +66,15 @@ export default function CodeBlock() {
     });
     
     return () => {
-      socket.current.off('connect');
-      socket.current.off('roleAssigned');
-      socket.current.off('codeUpdate');
-      socket.current.off('submit');
-      socket.current.off('success');
-      socket.current.disconnect();
+      if (isMounted.current) {
+        socket.current.off('connect');
+        socket.current.off('roleAssigned');
+        socket.current.off('codeUpdate');
+        socket.current.off('submit');
+        socket.current.off('success');
+        socket.current.disconnect();
+      }
+      isMounted.current = false;
     };
   }, []);
 
